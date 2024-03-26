@@ -100,6 +100,6 @@ Rails.application.configure do
   
   
   # Note change the host to the actual host of the application
-  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'assessmentamt.onrender.com'  }
   
 end
