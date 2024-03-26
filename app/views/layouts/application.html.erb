@@ -12,7 +12,9 @@
     <%= render 'static_pages/header' %>
     
     <div class="container">
-    
+      <% if notice %>
+        <%= render 'layouts/alerts' %>
+      <% end %>
     
       <%= yield %>
     </div>
