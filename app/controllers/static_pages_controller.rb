@@ -8,12 +8,18 @@ class StaticPagesController < ApplicationController
   end
   
   def user_profile
+    @user = User.find(params[:id])
+    
   end
   
   # GET /users or /users.json
   def index
     @users = User.all
+    if params[:search].present?
+      @users = @users.where("name LIKE ?", "%#{params[:q]}%") if params[:q].present?
+    end
   end
+  
   
   private
     def logged_in_user

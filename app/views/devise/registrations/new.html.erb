@@ -7,6 +7,12 @@
         <h7>
           <%= render "devise/shared/error_messages", resource: resource %>
         </h7>
+        
+        <div class="field form-group">
+          <% f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control", placeholder:"Name" %>
+        </div>
+        
         <div class="field form-group">
           <% f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
@@ -24,10 +30,19 @@
           <% f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password Confirmation" %>
         </div>
+        
+        <!-- Add an image upload field -->
+        <div class="field">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+          
+        </div>
+        
         </br>
         <div class="actions">
           <%= f.submit "Sign up", class:"btn btn-success" %>
         </div>
+        
       <% end %>
     </br>
     <%= render "devise/shared/links" %>

@@ -1,0 +1,5 @@
+<%= form_for @photo, html: { multipart: true } do |f| %>
+    <%= f.label :image %>
+    <%= f.cl_image_upload :image %>
+    <%= f.submit "Upload" %>
+<% end %>
